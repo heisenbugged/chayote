@@ -1,0 +1,319 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+.clearfix:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+
+.clearfix {
+	display: inline-block;
+}
+
+html[xmlns] .clearfix {
+	display: block;
+}
+
+* html .clearfix {
+	height: 1%;
+}
+
+body {
+    color: #333;
+	background-image: url(../images/bg.gif);
+	background-repeat: repeat-x;
+    background-color: white;
+	font-family: Arial, Helvetica, sans-serif;
+}
+h1, h2, h3 { font-size: 30px; font-family: 'Ubuntu', "Lucida Grande", Arial, Helvetica, sans-serif; color: #333333; font-weight: bold; }
+h2 { font-size: 25px; }
+h3 { font-size: 20px; }
+h1 a, h2 a, h3 a { color: #333; text-decoration: none; }
+.green { color: #abd539; }
+a { color: #9cc234; }
+.link-button {
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    border: 1px solid #cccccc;
+    padding: 5px;
+    background-color: #e8e8e8;
+    float: left;
+    margin-top: 10px;
+    margin-right: 5px;    
+}
+.link-button a {
+    color: #333;
+    font-family: 'Ubuntu', "Lucida Grande", Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+}
+#logo { float: left; margin-top: 15px; }
+.head { height: 86px; padding-left: 30px; }
+.main { padding-top: 15px; width: 900px; margin: auto; }
+.rounded-box, .border-rounded-box {
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+    border-radius: 15px;
+    background-color: #f6f6f6;
+    padding: 15px;
+}
+.border-rounded-box {
+    border: 1px solid #cccccc;
+}
+.sign-in {
+    width: 500px;
+    margin: auto;
+}
+.line, .line-nomargin { border-bottom: 1px solid #ccc; padding-bottom: 10px; margin-bottom:10px; }
+.line-nomargin { margin-bottom: 0px; }
+.clear { clear: both; }
+.right { float: right; }
+.left { float: left; }
+.signup-form {
+    width: 415px;
+    margin: auto;
+}
+.signin-form {
+    width: 318px;
+    margin: auto;
+}
+.signup-submit {
+    float: right;
+    margin-right: 30px;
+}
+.form-labels {
+    float: left;
+    line-height: 35px;
+    text-align: right;
+    margin-right: 10px;
+    font-size: 18px;
+}
+.form-inputs {
+    float: left;
+    line-height: 35px;
+}
+.remember-box {
+    float: right;
+    margin-bottom: 5px;    
+}
+.signup-form input[type="text"], .signin-form input[type="text"],
+.signup-form input[type="password"], .signin-form input[type="password"]  {
+    width: 213px;    
+}
+.devise-links {
+    float: right;
+    margin: auto;
+    margin-top: 10px;
+}
+.signup-form .submit-button, .signin-form .submit-button {
+    float: right;   
+}
+.submit-button input, .green-rounded {
+    background: #AED93C;
+    background: -webkit-gradient(linear, 0% 100%, 0% 0%, color-stop(0, #a5cb44),
+                                color-stop(0.7, #adda3d), color-stop(0.96, #bee263), color-stop(1, #99EB79));
+    background: -moz-linear-gradient(center bottom, #a5cb44 0%,
+                                    #adda3d 70%, #bee263 96%, #99EB79 99%) repeat scroll 0 0;
+
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#a5cb44', endColorstr='#adda3d');
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#a5cb44', endColorstr='#adda3d')";
+
+    font-size: 13px;
+
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+
+    font-family: Arial, Helvetica, sans-serif;
+    border: 1px solid #aed93c;
+    color: white;
+    display: inline-block;
+    font-weight: bold;
+    line-height: 27px;
+    padding: 0 16px 4px;
+    text-shadow: 0 0 3px #79972a;
+    width: auto;
+    cursor: pointer;
+    margin: auto;
+    font-size: 13px;
+}
+.submit-button input a, .green-rounded a {
+    color: white;
+    text-decoration: none;
+    padding: 0px;
+}
+.submit-link input {
+    background:none;
+    border:0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 100%;
+    color: #9cc234;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.links {
+    float: left;
+    margin-left: 30px;
+    line-height: 85px;
+    font-weight: bold;
+}
+.links a {
+    text-decoration: none;
+    color: #333;
+}
+.link {
+    padding-right: 15px;
+}
+
+
+.home { padding-left: 15px; padding-right: 15px; border-top: 1px solid #ccc; padding-top: 10px; margin-top: 10px; }
+.add-task {
+    float: right;
+    padding-right: 15px;
+}
+.add-task form {
+
+}
+.add-task input[type="text"], .add-task input[type="submit"] {
+    margin-right: 10px;
+}
+.add-task .title {
+    float: left;
+    font-weight: bold;    
+}
+.no-tasks {
+    font-weight: bold;
+    color: #999;
+    font-size: 18px;
+    text-align: center;
+    margin-top: 10px;
+}
+/* Flutie table styles */
+table {  
+  width: 100%;
+}
+
+th {
+  border-bottom: 2px solid #ccc;
+  font-weight: bold;
+  text-align: left;
+}
+
+td {
+  border-bottom: 1px solid #ddd;
+}
+
+caption, th, td {
+  padding: 4px 10px 4px 0;
+}
+
+caption {
+  background: #f1f1f1;
+  margin-bottom: 1em;
+  padding: 10px 0;
+}
+
+tr, td, th {
+  vertical-align: middle;
+}
+
+/* Use this if you use span-x classes on th/td. */
+table .last {
+  padding-right: 0;
+}
+
+/** custom table styles **/
+.green-big tr {
+    height: 50px;
+    background-color: #f9fff1;
+    background-image: url(../images/tr-bg.gif);
+    background-repeat: repeat-x;
+    background-position: bottom;
+}
+.green-big tr.white {
+    background-color: white;
+}
+.green-big tr.white td.project-title {
+    color: #9cc234;
+}
+.green-big td {
+    padding-top: 10px;
+    border: none;    
+    padding-bottom: 15px;
+}
+.title-1col, .title-2col {
+    font-weight: bold;
+    font-family: 'Ubuntu', Arial, Helvetica, sans-serif;
+    padding-left: 15px;
+}
+td.title-1col, td.col1 {
+    width: 40%;
+}
+td.title-2col, td.col2 {
+    width: 80%;
+}
+td.halfcol {
+    width: 30%
+}
+table.green-big {
+    margin-bottom: 0;
+}
+table.green-big a {
+    color: #333;
+}
+table.green-big td.project-title {
+    width: 40%;
+}

@@ -1,31 +1,45 @@
-source 'http://rubygems.org'
+source :rubygems
 
 gem 'rails', '3.0.4'
 
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
+gem 'hpricot'
+gem 'ruby_parser'
 
-gem 'sqlite3'
+# Core Ext
+#gem 'andand', :git => "git://github.com/raganwald/andand.git"
 
-# Use unicorn as the web server
-# gem 'unicorn'
+# UI
+gem 'haml', '~> 3.0.21'
+gem 'will_paginate'
 
-# Deploy with Capistrano
-# gem 'capistrano'
+# DB
+gem 'mongoid', '~> 2.0.0.beta.20'
+# Bson and bson_ext have to be the same version
+gem 'bson', '~> 1.2.4'
+gem 'bson_ext', '~> 1.2.4'
 
-# To use debugger (ruby-debug for Ruby 1.8.7+, ruby-debug19 for Ruby 1.9.2+)
-# gem 'ruby-debug'
-# gem 'ruby-debug19'
+# Model
+gem 'state_machine', '~> 0.9.4'
+gem 'state_machine-mongoid', '~> 0.1.5'
 
-# Bundle the extra gems:
-# gem 'bj'
-# gem 'nokogiri'
-# gem 'sqlite3-ruby', :require => 'sqlite3'
-# gem 'aws-s3', :require => 'aws/s3'
+# Controller
+gem 'inherited_resources', '~> 1.1.2'
 
-# Bundle gems for the local environment. Make sure to
-# put test-only gems in this group so their generators
-# and rake tasks are available in development mode:
-# group :development, :test do
-#   gem 'webrat'
-# end
+# Other
+gem 'simple_form'
+gem "mongoid-paperclip", :require => "mongoid_paperclip"
+gem "aws-s3",            :require => "aws/s3"
+
+# Server
+gem 'thin', '~> 1.2.7'
+
+# Auth
+gem 'devise', '~> 1.1.5'
+
+# Test gems with generators (available in dev env)
+group :development, :test do
+  gem 'rspec-core', '~> 2.3.1'
+  gem 'rspec-expectations', '~> 2.3.0'
+  gem 'rspec-rails', '~> 2.3.1'
+  gem 'spork', '>= 0.9.0.rc2'
+end

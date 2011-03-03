@@ -1,0 +1,12 @@
+.line
+  %h2
+    = link_to "projects", root_url
+    >
+    = link_to @project.name, project_path(@project)
+    >
+    %span.green new task
+
+= simple_form_for [@project, @task] do |f|
+  = f.input :name
+  = f.submit
+  

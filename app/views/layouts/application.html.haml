@@ -1,0 +1,24 @@
+!!!
+%html
+  %head
+    %title Chayote
+    = stylesheet_link_tag :all
+    = javascript_include_tag :defaults
+    = csrf_meta_tag
+    :plain
+      <link href="http://fonts.googleapis.com/css?family=Ubuntu:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css" >
+  %body
+    .head
+      = image_tag "logo.png", :id => "logo", :alt => "Chayote"
+      .links
+        %span.link= link_to "Projects", root_url
+        - if user_signed_in?
+          - if current_user.admin?
+            %span.link= link_to "Manage Projects", admin_projects_url                    
+          %span.link= link_to "Sign Out", destroy_user_session_url
+        - else
+          %span.link= link_to "Sign In", new_user_session_url
+    .main
+      %p.notice= notice
+      %p.alert= alert
+      = yield

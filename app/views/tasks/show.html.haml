@@ -1,0 +1,31 @@
+.line-nomargin.clearfix{ :style=>"width: 900px;" }
+  .left
+    %h2
+      = link_to "projects", root_path
+      >
+      = link_to @task.project.name, project_path(@task.project)
+      >
+      %span.green= @task.name
+
+  .add-task
+    = simple_form_for [@task, TimeEntry.new] do |f|
+      .left= f.input :hours, :label => false
+      .left.submit-button= f.submit "Add Time Entry"
+    .clear
+- if @entries_exist
+  %table.green-big
+    - @task.time_entries.each_with_index do |entry, index|
+      - if index % 2 == 0
+        - tr_class = ""
+      -else
+        - tr_class = "white"
+      %tr{:class => tr_class}
+        %td.title-1col= entry.hours.to_s + " hours"
+        %td.col1= created_at_time(entry)
+        %td
+          = link_to "Delete", time_entry_url(entry), :method => :delete
+- else
+  .no-tasks You don't have any time entries for #{ @task.name }
+
+
+%br/

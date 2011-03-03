@@ -1,0 +1,38 @@
+.line
+  %h2 Edit #{ @project.name }
+= simple_form_for [:admin, @project] do |f|
+  = f.input :name, :label => "Name: "
+  %br/
+  .submit-button= f.submit "Update"
+%br/
+
+.line{:style => "margin: 0;"}
+  %h3 Developers
+%table
+  - @project.members.each do |member|
+    %tr
+      %td= member.user.email
+      %td= number_to_currency( member_project_rate(member).amount )
+      %td.submit-link= link_to "Delete", admin_member_url(member), :method => :delete
+%br/
+%h3 Add a Developer
+= simple_form_for [:admin, Member.new] do |f|
+  <select name="member[user]">
+  - User.all.each do |user|
+    - unless @project.users.include?(user)
+      <option value="#{user.id}">#{user.email}</option>
+  </select>    
+  %br/
+  %br/
+  Rate:
+  = text_field_tag 'rate'
+  = hidden_field_tag 'member[project]', @project.id
+  %br/
+  %br/
+  .submit-button= f.submit "Add Developer"
+
+%br/
+.line
+
+
+.green-rounded= link_to "View all projects", admin_projects_url

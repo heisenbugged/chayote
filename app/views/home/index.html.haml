@@ -1,0 +1,16 @@
+- if user_signed_in?
+  .line{:style => "margin-bottom: 0px;"}
+    %h2 projects
+  - if @projects_exist
+    %table.green-big
+      - current_user.projects.each_with_index do |project, index|
+        - if index % 2 == 0
+          - tr_class = ""
+        -else
+          - tr_class = "white"
+        %tr{:class => tr_class}
+          %td.title-2col= project.name
+          %td
+            = link_to "View Tasks", project_path(project)
+  - else
+    .no-tasks You don't have any projects.

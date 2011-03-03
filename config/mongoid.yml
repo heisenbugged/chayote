@@ -1,0 +1,23 @@
+defaults: &defaults
+  host: localhost
+  # slaves:
+  #   - host: slave1.local
+  #     port: 27018
+  #   - host: slave2.local
+  #     port: 27019
+
+development:
+  <<: *defaults
+  database: chayote_development
+
+test:
+  <<: *defaults
+  database: chayote_test
+
+# set these environment variables on your prod server
+production:
+  host: flame.mongohq.com
+  port: 27055
+  username: root
+  password: root
+  database: chayote
