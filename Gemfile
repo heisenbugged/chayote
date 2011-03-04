@@ -5,6 +5,8 @@ gem 'rails', '3.0.4'
 gem 'hpricot'
 gem 'ruby_parser'
 
+gem "cancan"
+
 # Core Ext
 #gem 'andand', :git => "git://github.com/raganwald/andand.git"
 

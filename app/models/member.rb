@@ -7,9 +7,11 @@ class Member
   #field :rate
   private
   def destroy_project_rate
-    @rate = member_project_rate(self)
-    if @rate
-      @rate.delete
+    if user
+      @rate = member_project_rate(self)
+      if @rate
+        @rate.delete
+      end
     end
   end
 end

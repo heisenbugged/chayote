@@ -8,12 +8,16 @@
         .form-labels
           = f.label :email
           %br/
+          = f.label :full_name
+          %br/
           = f.label :password
           %br/
           = f.label :password_confirmation
 
         .form-inputs
           = f.text_field :email
+          %br/
+          = f.text_field :full_name
           %br/
           = f.password_field :password
           %br/

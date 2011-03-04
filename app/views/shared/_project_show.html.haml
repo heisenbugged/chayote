@@ -1,0 +1,31 @@
+.line-nomargin.clearfix{ :style=>"width: 900px;" }
+  .left
+    %h2
+      = link_to "projects", root_path
+      >
+      %span.green= @project.name
+
+  .add-task
+    = simple_form_for [@project, Task.new] do |f|
+      .left= f.input :name, :label => false
+      .left.submit-button= f.submit "Add Task"
+    .clear
+
+- if @tasks_exist
+  %table.green-big
+    - @tasks.each_with_index do |task, index|
+      - if index % 2 == 0
+        - tr_class = ""
+      -else
+        - tr_class = "white"
+      %tr{:class => tr_class}
+        %td.title-1col= task.name
+        %td.halfcol= task.hours.to_s + " hours"
+        %td
+          = link_to "View Entries", task_url(task)
+          |
+          = link_to "Edit", edit_task_url(task)
+          |
+          = link_to "Delete", task_url(task), :method => :delete
+- else
+  .no-tasks You don't have any tasks

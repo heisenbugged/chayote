@@ -2,12 +2,15 @@ class User
   include Mongoid::Document
   field :admin, :type => Boolean, :default => false
   field :base_rate, :type => Integer
+  field :full_name
   
   references_many :members, :dependent => :destroy
   references_many :rates, :dependent => :destroy
   references_many :tasks, :dependent => :destroy
   references_many :time_entries, :dependent => :destroy
 
+  validates_presence_of :full_name
+  
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable, :lockable and :timeoutable
   devise :database_authenticatable, :registerable,
@@ -19,5 +22,9 @@ class User
     if object.instance_of? Project
       rates.where(:project_id => object.id).first
     end
+  end
+  def tasks_for_dates(start_date, end_date)
+    unique = time_entries.where(:date.gte => start_date, :date.lte => end_date).collect { |entry| entry.task }.uniq!
+    unique
   end
 end

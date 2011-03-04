@@ -1,7 +1,14 @@
 class Admin::ProjectsController < ApplicationController
   inherit_resources
-  actions :index, :new, :create, :edit, :update, :destroy
+  load_and_authorize_resource
+  actions :index, :new, :create, :edit, :update, :destroy, :show
   before_filter :authenticate_user!
+  
+  def show
+    @project = Project.find(params[:id])
+    @tasks = @project.tasks.desc(:_id)
+    @tasks_exist = (@tasks.count == 0) ? false : true
+  end
   def update
     @project = Project.find(params[:id])
     unless params[:users].blank?

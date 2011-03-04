@@ -4,6 +4,7 @@ class TimeEntriesController < ApplicationController
   actions :create, :new, :delete, :destroy
   before_filter :authenticate_user!
   def create
+    params[:time_entry][:user_id] = current_user.id
     create! { task_path(params[:task_id] )}
   end
   def destroy

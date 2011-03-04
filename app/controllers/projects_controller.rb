@@ -2,7 +2,8 @@ class ProjectsController < ApplicationController
   inherit_resources
   actions :show
   before_filter :authenticate_user!
-
+  load_and_authorize_resource
+  
   def show
     @project = Project.find(params[:id])
     @tasks = @project.user_tasks(current_user).desc(:_id)

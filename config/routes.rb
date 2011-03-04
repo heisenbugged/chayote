@@ -6,6 +6,7 @@ Chayote::Application.routes.draw do
   namespace :admin do
     resources :members
     resources :projects
+    resources :users
     match 'projects/:id/add_user' => "projects#add_user"
     match 'projects/:id/remove_user' => "projects#remove_user"
   end
@@ -16,4 +17,7 @@ Chayote::Application.routes.draw do
     resources :time_entries
   end
   resources :time_entries
+
+  match 'invoice/new' => "invoice#new"
+  match 'invoice/show' => "invoice#show"
 end

@@ -3,6 +3,7 @@ class TasksController < ApplicationController
   belongs_to :project, :optional => true
   actions :new, :create, :show, :delete, :destroy, :edit, :update
   before_filter :authenticate_user!
+  load_and_authorize_resource
 
   def show
     @task = Task.find(params[:id])

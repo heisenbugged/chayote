@@ -1,0 +1,24 @@
+.line
+  %h2 New Invoice
+  = form_tag 'show' do
+    %br/
+    Start Date:
+    = text_field_tag :start_date
+    <br/><br/>
+    End Date:
+    = text_field_tag :end_date
+    <br/><br/>
+    <select name="project">
+    - @projects.each do |project|
+      <option value="#{project.id}">#{project.name}</option>
+    </select>
+    <br/><br/>
+    .submit-button= submit_tag "Generate invoice"
+
+
+- content_for :javascripts do  
+  :javascript
+      $(function() {
+        $("#start_date").datepicker({dateFormat: 'dd-mm-yy'});
+        $("#end_date").datepicker({dateFormat: 'dd-mm-yy'});
+      });

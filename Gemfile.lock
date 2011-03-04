@@ -37,6 +37,7 @@ GEM
     bson (1.2.4)
     bson_ext (1.2.4)
     builder (2.1.2)
+    cancan (1.5.1)
     daemons (1.1.0)
     devise (1.1.7)
       bcrypt-ruby (~> 2.1.2)
@@ -139,6 +140,7 @@ DEPENDENCIES
   aws-s3
   bson (~> 1.2.4)
   bson_ext (~> 1.2.4)
+  cancan
   devise (~> 1.1.5)
   haml (~> 3.0.21)
   hpricot

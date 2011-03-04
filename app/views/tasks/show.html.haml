@@ -7,11 +7,14 @@
       >
       %span.green= @task.name
 
-  .add-task
+  .add-time-entries
     = simple_form_for [@task, TimeEntry.new] do |f|
-      .left= f.input :hours, :label => false
+      .left= f.input :hours, :label => "Hours: "
+      .left= f.input :date, :label => "Date: "
       .left.submit-button= f.submit "Add Time Entry"
     .clear
+
+
 - if @entries_exist
   %table.green-big
     - @task.time_entries.each_with_index do |entry, index|
@@ -21,11 +24,15 @@
         - tr_class = "white"
       %tr{:class => tr_class}
         %td.title-1col= entry.hours.to_s + " hours"
-        %td.col1= created_at_time(entry)
+        %td.col1= date_time(entry)
         %td
           = link_to "Delete", time_entry_url(entry), :method => :delete
 - else
   .no-tasks You don't have any time entries for #{ @task.name }
-
-
 %br/
+
+- content_for :javascripts do  
+  :javascript
+      $(function() {        
+        $("#time_entry_date").datepicker({dateFormat: 'dd-mm-yy'});
+      });

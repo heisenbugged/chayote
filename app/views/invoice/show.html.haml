@@ -1,0 +1,38 @@
+%table#invoice.green-big
+  %tr.no-bg
+    %th Task
+    %th Time
+    %th Rate
+    %th Cost
+  - total_cost = 0  
+  - @project.users.each do |user|
+    - tasks = user.tasks_for_dates(@start_date, @end_date)
+    - user_hours = 0
+    -rate = user.rate_for(@project).amount
+    - begin      
+      - if tasks.count > 0
+        %tr.username
+          %td{:colspan => 5}= user.full_name
+        - tasks.each_with_index do |entry, index|
+          - if index % 2 == 0
+            - tr_class = ""
+          -else
+            - tr_class = "alternate"
+          %tr{:class => tr_class}
+            - task_hours = entry.total_hours_for_dates(@start_date, @end_date)
+            - user_hours += task_hours
+            %td.title-1col= entry.name
+            %td= task_hours.to_s + " hours"
+            %td= number_to_currency(rate)
+            %td= task_cost(task_hours,rate)
+        %tr.total
+          %td{:colspan => 5}= render :partial => 'total', :locals => {:hours => user_hours, :rate => rate}
+        %tr.seperator
+          %td{:colspan => 5}
+            - total_cost += (user_hours.to_i*rate.to_i)            
+    - rescue
+
+.invoice-total
+  = "Total: " + number_to_currency(total_cost) + " USD"
+
+

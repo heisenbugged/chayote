@@ -8,10 +8,12 @@
       - tr_class = "white"
       
     %tr{:class => tr_class}
-      %td.title-2col= project.name
+      %td.title-2col{:style => "width: 70%;"}= project.name
       %td
         = link_to "Edit", edit_admin_project_url(project)
         |
         = link_to "Delete", admin_project_url(project), :method => :delete
+        |
+        = link_to "View Entries", admin_project_url(project)
 %br/    
 .green-rounded= link_to "Create a new project", new_admin_project_url

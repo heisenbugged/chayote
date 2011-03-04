@@ -1,0 +1,23 @@
+.line-nomargin
+  %h2 Editing #{ @user.full_name }
+
+= simple_form_for [:admin, @user] do |f|
+  .form-labels
+    = f.label :email
+    %br/
+    = f.label :full_name
+    %br/
+    = f.label :password
+    %br/
+    = f.label :password_confirmation
+    %br/
+    = f.label :admin
+  .form-inputs
+    = f.input :email, :label => false   
+    = f.input :full_name, :label => false
+    = f.input :password, :label => false
+    = f.input :password_confirmation, :label => false
+    = f.check_box :admin, :label => false
+  .clear
+  %br/
+  .submit-button= f.submit "Update User"

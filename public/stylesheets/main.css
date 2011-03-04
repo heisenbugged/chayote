@@ -82,6 +82,7 @@ h3 { font-size: 20px; }
 h1 a, h2 a, h3 a { color: #333; text-decoration: none; }
 .green { color: #abd539; }
 a { color: #9cc234; }
+span.italic { font-style: italic; }
 .link-button {
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
@@ -220,19 +221,16 @@ a { color: #9cc234; }
 
 
 .home { padding-left: 15px; padding-right: 15px; border-top: 1px solid #ccc; padding-top: 10px; margin-top: 10px; }
-.add-task {
+.add-task, .add-time-entries {
     float: right;
     padding-right: 15px;
 }
-.add-task form {
-
+.add-time-entries input[type="text"] {
+    margin-right: 10px;
+    width: 100px;
 }
 .add-task input[type="text"], .add-task input[type="submit"] {
     margin-right: 10px;
-}
-.add-task .title {
-    float: left;
-    font-weight: bold;    
 }
 .no-tasks {
     font-weight: bold;
@@ -316,4 +314,108 @@ table.green-big a {
 }
 table.green-big td.project-title {
     width: 40%;
+}
+table#invoice {
+    margin: auto;
+    width: 700px;
+}
+table#invoice tr {    
+    /*background-image: url(../images/tr-bg-grey.gif);
+    background-repeat: repeat-x;
+    background-position: bottom;
+    background-color: white;*/
+    background: none;
+    height: 30px;
+    font-size: 12px;
+    font-family: Tahoma, Arial, Helvetica, sans-serif;
+}
+table#invoice tr.alternate {
+    background-color: #fafafa;
+}
+table#invoice td {
+    border-right: 1px solid #b9b9b9;
+    border-left: 1px solid #b9b9b9;
+    text-align: center;
+}
+table#invoice th {
+    text-align: center;
+}
+table#invoice tr.no-bg {    
+    background: none;
+    height: auto;
+}
+table#invoice tr.username {
+    height: 25px;
+    background-color: #555;
+    background-image: none;
+    color: white;
+    border-bottom: 1px solid #b9b9b9;
+}
+table#invoice tr.username td {
+    text-align: center;
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+table#invoice tr.total {
+    background-color: #44C0E9;
+    color: white;
+    height: 25px;
+    font-weight: bold;
+    border-top: 1px solid #b9b9b9;
+    border-bottom: 1px solid #b9b9b9;
+}
+table#invoice tr.total td {
+    padding-bottom: 10px;
+}
+table#invoice tr.seperator {
+    padding: 0;
+    margin: 0;
+    height: 5px;
+}
+table#invoice tr.seperator td {    
+    padding: 0;
+    margin: 0;
+}
+table#invoice td.no-tasks {
+    border: none;
+}
+.invoice-total {
+    width: 700px;
+    margin: auto;
+    font-size: 25px;    
+    color: #777;
+    font-family: Tahoma, Arial, Helvetica, sans-serif;
+}
+/** invoice table styles **/
+
+/* notice styles */
+
+.error, .alert, .notice, .success, .info {
+padding: 0.8em;
+margin-bottom: 1em;
+border: 1px solid #DDD;
+}
+
+.notice, #flash_notice, .error, .alert {
+    background: #FFF6BF;
+    border-color: #FFD324;
+    color: #817134;
+    border-top-left-radius: 8px 8px;
+    border-top-right-radius: 8px 8px;
+    border-bottom-right-radius: 8px 8px;
+    border-bottom-left-radius: 8px 8px;
+    margin-bottom: 1em;
+    padding: 0.8em;
+    font-size: 13px;
+}
+.error, .alert {
+    background: #FBE3E4;
+    color: #8A1F11;
+    border-color: #FBC2C4;
+}
+
+#error_explanation h2 {
+    font-size: 18px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
 }
