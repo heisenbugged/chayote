@@ -24,7 +24,6 @@ class User
     end
   end
   def tasks_for_dates(start_date, end_date)
-    unique = time_entries.where(:date.gte => start_date, :date.lte => end_date).collect { |entry| entry.task }.uniq!
-    unique
+    time_entries.where(:date.gte => start_date, :date.lte => end_date).collect { |entry| entry.task }.uniq    
   end
 end
