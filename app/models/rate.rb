@@ -1,5 +1,4 @@
 class Rate
   include Mongoid::Document
-  field :amount
-  referenced_in :user
+  field :amount, :type => Integer
 end

@@ -20,7 +20,7 @@ class User
   end
   def rate_for(object)
     if object.instance_of? Project
-      rates.where(:project_id => object.id).first
+      rates.where(:project_id => object.id).desc(:_id).first
     end
   end
   def tasks_for_dates(start_date, end_date)

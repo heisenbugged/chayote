@@ -1,6 +1,7 @@
 include ApplicationHelper
 class Member
   include Mongoid::Document
+  include Mongoid::Timestamps
   referenced_in :user
   referenced_in :project
   after_destroy :destroy_project_rate
