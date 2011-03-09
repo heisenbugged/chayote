@@ -24,12 +24,12 @@
             %td.title-1col= entry.name
             %td= task_hours.to_s + " hours"
             %td= number_to_currency(rate)
-            %td= task_cost(task_hours,rate)
+            %td= number_to_currency(task_cost(task_hours,rate))
         %tr.total
           %td{:colspan => 5}= render :partial => 'total', :locals => {:hours => user_hours, :rate => rate}
         %tr.seperator
           %td{:colspan => 5}
-            - total_cost += (user_hours.to_i*rate.to_i)            
+            - total_cost += task_cost(user_hours,rate)
     - rescue
 
 .invoice-total
