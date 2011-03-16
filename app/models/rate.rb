@@ -1,4 +1,4 @@
 class Rate
   include Mongoid::Document
-  field :amount, :type => Integer
+  field :amount, :type => BigDecimal
 end

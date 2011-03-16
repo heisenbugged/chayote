@@ -6,6 +6,6 @@ module ApplicationHelper
     model.date.strftime("%d %B %Y")
   end
   def task_cost(hours,rate)
-    BigDecimal.new(hours.to_s)*BigDecimal(rate.to_s)
+    hours*rate
   end
 end

@@ -4,7 +4,10 @@ class TimeEntry
   referenced_in :user
   referenced_in :task
   field :date, :type => Date
-  field :hours, :type => Integer
+  field :hours, :type => BigDecimal
+  
+  validates_numericality_of :hours
+
   before_create :verify_date
   private
   def verify_date
