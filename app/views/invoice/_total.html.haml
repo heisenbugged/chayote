@@ -1,2 +1,3 @@
-A total of <span class='italic'> #{ hours.to_s } hours </span> worth
-<span class='italic'> #{ number_to_currency(task_cost(hours,rate)) } USD </span>
+%font{:color => "white"}
+  <b>A total of <i> #{ hours.to_s } hours </i> worth 
+  <i>#{ number_to_currency(task_cost(hours,rate)) } USD</i></b>

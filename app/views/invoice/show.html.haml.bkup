@@ -12,11 +12,8 @@
       -rate = user.rate_for(@project).amount
       - begin
         - if tasks.count > 0
-          %tr
-            %td{:colspan => 4, :style => "background-color: #333;"}
-              %font{:color => "white"}
-                %b= user.full_name
-                
+          %tr.username
+            %td{:colspan => 5}= user.full_name
           - tasks.each_with_index do |entry, index|
             - if index % 2 == 0
               - tr_class = ""
@@ -30,13 +27,13 @@
               %td= number_to_currency(rate)
               %td= number_to_currency(task_cost(task_hours,rate))
           %tr.total
-            %td{:colspan => 4, :style => "background-color:#44C0E9;"}
-              = render :partial => 'total', :locals => {:hours => user_hours, :rate => rate}
-
-          - total_cost += task_cost(user_hours,rate)
+            %td{:colspan => 5}= render :partial => 'total', :locals => {:hours => user_hours, :rate => rate}
+          %tr.seperator
+            %td{:colspan => 5}
+              - total_cost += task_cost(user_hours,rate)
       - rescue
 
-  %h1
+  .invoice-total
     = "Total: " + number_to_currency(total_cost) + " USD"
   
 

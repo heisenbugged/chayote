@@ -20,4 +20,6 @@ Chayote::Application.routes.draw do
 
   match 'invoice/new' => "invoice#new"
   match 'invoice/show' => "invoice#show"
+
+  match 'bot' => "bot#index"
 end

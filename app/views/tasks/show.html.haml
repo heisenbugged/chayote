@@ -11,6 +11,7 @@
     = simple_form_for [@task, TimeEntry.new] do |f|
       .left= f.input :hours, :label => "Hours: "
       .left= f.input :date, :label => "Date: "
+      =# f.hidden_field :rate_amount, :value => current_user.rate_for(@task.project).amount-1
       .left.submit-button= f.submit "Add Time Entry"
     .clear
 
