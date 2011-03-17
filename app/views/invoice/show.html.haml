@@ -7,7 +7,7 @@
       %th Cost
     - total_cost = 0
     - @project.users.each do |user|
-      - tasks = user.tasks_for_dates(@start_date, @end_date)
+      - tasks = user.tasks_for_dates_and_project(@start_date, @end_date, @project)
       - user_hours = 0
       -rate = user.rate_for(@project).amount
       - begin

@@ -23,6 +23,9 @@ class User
       rates.where(:project_id => object.id).desc(:_id).first
     end
   end
+  def tasks_for_dates_and_project(start_date, end_date, project)
+    time_entries.where(:date.gte => start_date, :date.lte => end_date).collect {|entry| entry.task if entry.task.project == project}.uniq
+  end
   def tasks_for_dates(start_date, end_date)
     time_entries.where(:date.gte => start_date, :date.lte => end_date).collect { |entry| entry.task }.uniq    
   end
