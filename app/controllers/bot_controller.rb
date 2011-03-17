@@ -18,7 +18,7 @@ class BotController < ApplicationController
         @text = "You have tasks:<br>" + project.tasks.where(:user_id => user.id).map {|task| task.name }.join("<br>")
       elsif step >= 4
 
-          arr = params[:msg].split(" ")
+          arr = params[:msg].split(/\s*\|\s*/)
           task_s = arr[0]
           time_entry_s = arr[1]
 
