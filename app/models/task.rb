@@ -2,7 +2,7 @@ class Task
   include Mongoid::Document
   referenced_in :user
   referenced_in :project
-  references_many :time_entries
+  references_many :time_entries, :dependent => :destroy
   field :name
   def hours
     total_hours = 0

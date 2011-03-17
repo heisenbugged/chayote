@@ -15,7 +15,7 @@ class BotController < ApplicationController
       elsif step == 2
         @text = "Enter a project:<br>" + user.projects.map {|project| project.name }.join("<br>")
       elsif step == 3
-        @text = "You have tasks:<br>" + project.tasks.map {|task| task.name }.join("<br>")
+        @text = "You have tasks:<br>" + project.tasks.where(:user_id => user.id).map {|task| task.name }.join("<br>")
       elsif step >= 4
 
           arr = params[:msg].split(" ")
