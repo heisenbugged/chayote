@@ -33,6 +33,7 @@ class BotController < ApplicationController
 
           time_entry = TimeEntry.new
           time_entry.hours = time_entry_s
+          time_entry.user = user
           time_entry.task = task
           time_entry.save!
 
