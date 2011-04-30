@@ -71,9 +71,9 @@ html[xmlns] .clearfix {
 
 body {
     color: #333;
-	background-image: url(../images/bg.gif);
+	background-image: url(../images/bg.png);
 	background-repeat: repeat-x;
-    background-color: white;
+    background-color: #fafafa;
 	font-family: Arial, Helvetica, sans-serif;
 }
 h1, h2, h3 { font-size: 30px; font-family: 'Ubuntu', "Lucida Grande", Arial, Helvetica, sans-serif; color: #333333; font-weight: bold; }
@@ -96,9 +96,34 @@ span.italic { font-style: italic; }
 }
 .link-button a {
     color: #333;
-    font-family: 'Ubuntu', "Lucida Grande", Arial, Helvetica, sans-serif;
+    font-family: 'FrutigerCufon', Arial, Helvetica, sans-serif;
     font-weight: bold;
     text-decoration: none;
+}
+.main-content {
+    /* Fallback for web browsers that doesn't support RGBa */    
+    background: rgb(255, 255, 255);
+    /* RGBa with 0.6 opacity */
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px solid #c0c0c0;
+    border-top-width: 0px;
+    min-height: 300px;
+}
+.header {
+    background-image: url(../images/grey-bg.png);
+	background-repeat: repeat-x;
+    height: 53px;
+    border-radius: 10px 10px 0px 0px;
+    -webkit-border-radius: 10px 10px 0px 0px;
+    -moz-border-radius: 10px 10px 0px 0px;
+
+    font-family: 'FrutigerCufon', Arial, Helvetica, sans-serif;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 53px;
+    padding-left: 30px;    
+
 }
 #logo { float: left; margin-top: 15px; }
 .head { height: 86px; padding-left: 30px; }
@@ -113,7 +138,7 @@ span.italic { font-style: italic; }
 .border-rounded-box {
     border: 1px solid #cccccc;
 }
-.sign-in {
+.sign-in {    
     width: 500px;
     margin: auto;
 }
@@ -206,16 +231,18 @@ span.italic { font-style: italic; }
 }
 
 .links {
-    float: left;
+    display: inline;
     margin-left: 30px;
-    line-height: 85px;
+    line-height: 60px;
     font-weight: bold;
+    width: 100%;
 }
 .links a {
     text-decoration: none;
-    color: #333;
+    color: #e0e0e0;;
 }
 .link {
+
     padding-right: 15px;
 }
 
@@ -279,10 +306,11 @@ table .last {
 /** custom table styles **/
 .green-big tr {
     height: 50px;
-    background-color: #f9fff1;
-    background-image: url(../images/tr-bg.gif);
+    background-color: #fafafa;
+    
+    background-image: url(../images/tr-bg-grey.png);
     background-repeat: repeat-x;
-    background-position: bottom;
+    background-position: top;
 }
 .green-big tr.white {
     background-color: white;
@@ -292,13 +320,15 @@ table .last {
 }
 .green-big td {
     padding-top: 10px;
-    border: none;    
+    /*border: none;*/
+    border-top: 1px solid #d6d6d6;
     padding-bottom: 15px;
 }
 .title-1col, .title-2col {
     font-weight: bold;
-    font-family: 'Ubuntu', Arial, Helvetica, sans-serif;
-    padding-left: 15px;
+    font-family: 'FrutigerCufon', Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    padding-left: 30px;
 }
 td.title-1col, td.col1 {
     width: 40%;
@@ -421,4 +451,12 @@ border: 1px solid #DDD;
     font-size: 18px;
     border-bottom: 1px solid #ccc;
     padding-bottom: 5px;
+}
+
+#logo {
+    font-family: 'FrutigerCufon', Arial, Helvetica, sans-serif;
+    color: #e0e0e0;
+    font-size: 24px;
+    display: inline;
+    font-weight: bold;
 }

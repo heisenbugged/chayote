@@ -4,12 +4,22 @@
     %title Chayote    
     = stylesheet_link_tag "https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/themes/redmond/jquery-ui.css"
     = stylesheet_link_tag "main"
+
+    = javascript_include_tag "cufon"
+    = javascript_include_tag "frutiger.font"
+    :javascript
+      Cufon.replace('h1');
+      Cufon.replace('.link');
+      Cufon.replace('#logo');
+      Cufon.replace('.title-1col');
+      Cufon.replace('.title-2col');
+
+              
     = csrf_meta_tag
-    :plain
-      <link href="http://fonts.googleapis.com/css?family=Ubuntu:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css" >
   %body
     .head
-      = image_tag "logo.png", :id => "logo", :alt => "Chayote"
+      #logo
+        Chayote
       .links
         %span.link= link_to "Projects", root_url
         - if user_signed_in?
