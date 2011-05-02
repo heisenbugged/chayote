@@ -1,5 +1,6 @@
 class Task
   include Mongoid::Document
+  include Mongoid::Timestamps  
   referenced_in :user
   referenced_in :project
   references_many :time_entries, :dependent => :destroy

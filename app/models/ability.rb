@@ -1,3 +1,4 @@
+# CanCan permissions model.
 class Ability
   include CanCan::Ability
 

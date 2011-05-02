@@ -6,7 +6,7 @@ class ProjectsController < ApplicationController
   
   def show
     @project = Project.find(params[:id])
-    @tasks = @project.user_tasks(current_user).desc(:_id)
+    @tasks = @project.user_tasks(current_user).desc(:created_at).group_by { |t| t.created_at.to_date }
     @tasks_exist = (@tasks.count == 0) ? false : true
   end
 end

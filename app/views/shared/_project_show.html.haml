@@ -13,19 +13,25 @@
 
 - if @tasks_exist
   %table.green-big
-    - @tasks.each_with_index do |task, index|
-      - if index % 2 == 0
-        - tr_class = ""
-      -else
-        - tr_class = "white"
-      %tr{:class => tr_class}
-        %td.title-1col= task.name
-        %td.halfcol= task.hours.to_s + " hours"
-        %td
-          = link_to "View Entries", task_url(task)
-          |
-          = link_to "Edit", edit_task_url(task)
-          |
-          = link_to "Delete", task_url(task), :method => :delete
+    - @tasks.each do |key, task_array|
+      %tr.date-header
+        %td{:colspan => 3}= readable_date(key)
+              
+      - task_array.each_with_index do |task, index|
+        - if index % 2 == 0
+          - tr_class = ""
+        -else
+          - tr_class = "white"
+        %tr{:class => tr_class}
+          %td.title-1col= task.name
+          %td.halfcol= task.hours.to_s + " hours"
+          %td
+            = link_to "View Entries", task_url(task)
+            |
+            = link_to "Edit", edit_task_url(task)
+            |
+            = link_to "Delete", task_url(task), :method => :delete
+      %tr.filler
+        %td &nbsp
 - else
   .no-tasks You don't have any tasks

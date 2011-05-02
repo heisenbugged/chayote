@@ -295,6 +295,39 @@ table .last {
     border: none;    
     padding-bottom: 15px;
 }
+.green-big .filler {
+    height: 20px;
+    background: none;
+}
+.green-big .filler td {
+    padding: 0px;
+}
+.green-big .date-header {
+    height: 28px;
+    background-image: none;
+    /* fallback/image non-cover color */
+    background-color: #444;
+ 
+    /* Firefox 3.6+ */
+    background-image: -moz-linear-gradient(#333, #555);
+
+    /* Safari 4+, Chrome 1+ */
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#333), to(#555));
+
+    /* Safari 5.1+, Chrome 10+ */
+    background-image: -webkit-linear-gradient(#333, #555);
+
+    /* Opera 11.10+ */
+    background-image: -o-linear-gradient(#333, #555);
+}
+.green-big .date-header td {
+    padding: 0px;
+    padding-right: 10px;
+    text-align: right;
+    font-weight: bold;
+    font-family: 'Ubuntu', Arial, Helvetica, sans-serif;
+    color: #f0f0f0;
+}
 .title-1col, .title-2col {
     font-weight: bold;
     font-family: 'Ubuntu', Arial, Helvetica, sans-serif;
