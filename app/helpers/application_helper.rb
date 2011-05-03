@@ -3,7 +3,7 @@ module ApplicationHelper
     member.user.rate_for(member.project)
   end
   def readable_date(date)
-    date.strftime("%d %B %Y")
+    (date) ? date.strftime("%d %B %Y") : "Not Available"
   end
   def date_time(model)
     readable_date(model.date)

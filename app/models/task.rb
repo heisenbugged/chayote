@@ -5,6 +5,10 @@ class Task
   referenced_in :project
   references_many :time_entries, :dependent => :destroy
   field :name
+  def most_recent_entry_date
+      entry = time_entries.desc(:date).first
+      (entry) ? entry.date : nil
+  end
   def hours
     total_hours = 0
     time_entries.collect { |entry| total_hours += entry.hours }

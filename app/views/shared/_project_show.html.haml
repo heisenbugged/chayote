@@ -15,7 +15,7 @@
   %table.green-big
     - @tasks.each do |key, task_array|
       %tr.date-header
-        %td{:colspan => 3}= readable_date(key)
+        %td{:colspan => 3} Created on #{ readable_date(key) }
               
       - task_array.each_with_index do |task, index|
         - if index % 2 == 0
