@@ -1,16 +1,18 @@
-- if user_signed_in?
-  .line{:style => "margin-bottom: 0px;"}
-    %h2 projects
-  - if @projects_exist
-    %table.green-big
-      - current_user.projects.each_with_index do |project, index|
-        - if index % 2 == 0
-          - tr_class = ""
-        -else
-          - tr_class = "white"
-        %tr{:class => tr_class}
-          %td.title-2col= project.name
-          %td
-            = link_to "View Tasks", project_path(project)
-  - else
-    .no-tasks You don't have any projects.
+.grid_6
+  .projects
+    - if user_signed_in?
+      %h2.page_title_w_margin projects
+      - if @projects_exist
+        - current_user.projects.each do |project|
+          = link_to project_path(project) do
+            .project-listing= project.name
+
+      - else
+        .not-available You don't have any projects.
+
+.grid_1 &nbsp;
+.grid_5
+  %h2.page_title_w_margin recent activity
+  .not-available Not Available
+  
+.clear

@@ -1,0 +1,17 @@
+!!!
+%html
+  %head
+    %title Chayote
+    = stylesheet_link_tag "reset", "960", "main"
+    = csrf_meta_tag
+    :plain
+      <script type="text/javascript" src="http://use.typekit.com/byj4cum.js"></script>
+      <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+  %body
+    - if notice
+      .flash.notice= notice
+    - if alert
+      .flash.alert= alert
+
+    = yield

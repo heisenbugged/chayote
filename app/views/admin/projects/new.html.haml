@@ -1,9 +1,7 @@
-.line
-  %h2 New Project
-= simple_form_for [:admin, @project] do |f|
-  = f.input :name, :label => "Name: "
-  %br/
-  .line
-    .submit-button= f.submit
-  
-.green-rounded= link_to "View all projects", admin_projects_url
+.grid_12
+  %h2.page_title_w_margin New Project
+  = simple_form_for [:admin, @project] do |f|
+    = f.input :name, :label => "Name: "
+    .green-submit= f.submit
+      
+.clear

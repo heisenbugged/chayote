@@ -1,12 +1,12 @@
-.line
-  %h2
+.grid_12
+  %h2.page_title
     = link_to "projects", root_url
     >
     = link_to @project.name, project_path(@project)
     >
     %span.green Edit #{ @task.name }
 
-= simple_form_for [@project, @task] do |f|
-  = f.input :name, :label => "Name: "
-  %br/
-  .submit-button= f.submit
+  = simple_form_for [@project, @task] do |f|
+    = f.input :name, :label => "Name: "
+    %br/
+    .submit-button= f.submit

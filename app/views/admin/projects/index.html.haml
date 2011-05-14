@@ -1,19 +1,19 @@
-.line{:style => "margin-bottom: 0px;"}
-  %h2 manage projects
-%table.green-big
-  - @projects.each_with_index do |project, index|
-    - if index % 2 == 0
-      - tr_class = ""
-    - else
-      - tr_class = "white"
-      
-    %tr{:class => tr_class}
-      %td.title-2col{:style => "width: 70%;"}= project.name
-      %td
-        = link_to "Edit", edit_admin_project_url(project)
-        |
-        = link_to "Delete", admin_project_url(project), :method => :delete
-        |
-        = link_to "View Entries", admin_project_url(project)
-%br/    
-.green-rounded= link_to "Create a new project", new_admin_project_url
+.grid_12
+  %h2.page_title_w_margin manage projects
+  %table.green-big
+    %thead
+      %tr
+        %th Name
+        %th
+    - @projects.each_with_index do |project, index|
+      %tr
+        %td.title-2col{:style => "width: 70%;"}= project.name
+        %td
+          .small-green-button= link_to "Edit", edit_admin_project_url(project)
+          
+          .small-green-button= link_to "Delete", admin_project_url(project), :method => :delete
+
+          .small-green-button= link_to "View Entries", admin_project_url(project)
+ 
+  .green-button= link_to "Create a new project", new_admin_project_url
+.clear

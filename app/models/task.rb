@@ -5,6 +5,9 @@ class Task
   referenced_in :project
   references_many :time_entries, :dependent => :destroy
   field :name
+  
+  validates_presence_of :name
+
   def most_recent_entry_date
       entry = time_entries.desc(:date).first
       (entry) ? entry.date : nil

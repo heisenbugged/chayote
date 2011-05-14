@@ -1,37 +1,46 @@
-.line-nomargin.clearfix{ :style=>"width: 900px;" }
-  .left
-    %h2
-      = link_to "projects", root_path
-      >
-      = link_to @task.project.name, project_path(@task.project)
-      >
-      %span.green= @task.name
+.grid_8
+  %h2.page_title_w_margin
+    = link_to "projects", root_path
+    >
+    = link_to @task.project.name, project_path(@task.project)
+    >
+    %span.green= @task.name
+
+
+  - if @entries_exist
+    %table
+      %thead
+        %tr
+          %th Hours
+          %th Date
+          %th
+            
+      - @task.time_entries.each_with_index do |entry, index|
+        - if index % 2 == 0
+          - tr_class = ""
+        -else
+          - tr_class = "white"
+        %tr{:class => tr_class}
+          %td.title= entry.hours.to_s + " hours"
+          %td= date_time(entry)
+          %td
+            .small-green-button= link_to "Delete", time_entry_url(entry), :method => :delete
+  - else
+    .not-available You don't have any time entries for #{ @task.name }
+  %br/
+
+.grid_4
+  %h2.page_title_w_margin add time entry
 
   .add-time-entries
     = simple_form_for [@task, TimeEntry.new] do |f|
-      .left= f.input :hours, :label => "Hours: "
-      .left= f.input :date, :label => "Date: "
+      = f.input :hours, :label => "Hours: "
+      = f.input :date, :label => "Date: "
       =# f.hidden_field :rate_amount, :value => current_user.rate_for(@task.project).amount-1
-      .left.submit-button= f.submit "Add Time Entry"
+      .green-submit= f.submit "Add Time Entry"
     .clear
 
-
-- if @entries_exist
-  %table.green-big
-    - @task.time_entries.each_with_index do |entry, index|
-      - if index % 2 == 0
-        - tr_class = ""
-      -else
-        - tr_class = "white"
-      %tr{:class => tr_class}
-        %td.title-1col= entry.hours.to_s + " hours"
-        %td.col1= date_time(entry)
-        %td
-          = link_to "Delete", time_entry_url(entry), :method => :delete
-- else
-  .no-tasks You don't have any time entries for #{ @task.name }
-%br/
-
+.clear
 - content_for :javascripts do  
   :javascript
       $(function() {        

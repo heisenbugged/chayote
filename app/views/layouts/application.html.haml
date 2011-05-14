@@ -3,14 +3,16 @@
   %head
     %title Chayote    
     = stylesheet_link_tag "https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/themes/redmond/jquery-ui.css"
-    = stylesheet_link_tag "main"
+    = stylesheet_link_tag "reset", "960", "main"
     = csrf_meta_tag
     :plain
       <link href="http://fonts.googleapis.com/css?family=Ubuntu:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css" >
+      <script type="text/javascript" src="http://use.typekit.com/byj4cum.js"></script>
+      <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
   %body
-    .head
-      = image_tag "logo.png", :id => "logo", :alt => "Chayote"
-      .links
+    #header
+      #logo= image_tag "logo.png", :alt => "Chayote"
+      #links
         %span.link= link_to "Projects", root_url
         - if user_signed_in?
           - if current_user.admin?
@@ -21,9 +23,10 @@
         - else
           %span.link= link_to "Sign In", new_user_session_url
     .main
-      - if notice
-        .flash.notice= notice
-      - if alert
-        .flash.alert= alert
-      = yield
+      .container_12
+        - if notice
+          .flash.notice= notice
+        - if alert
+          .flash.alert= alert
+        = yield
   = render 'shared/javascripts'

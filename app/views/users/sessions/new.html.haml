@@ -1,0 +1,21 @@
+.login-box
+  %h1.login-text login
+  .login-box-content
+    = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
+      .login-lables
+        %p username
+        %p password
+
+      .login-inputs
+        %p= f.text_field :email
+        %p= f.password_field :password
+
+      .clear
+      - if devise_mapping.rememberable?
+        .remember-box
+          = f.check_box :remember_me
+          remember me
+        .clear
+      .green-submit
+        = f.submit "Submit Login"
+  .devise-links= render :partial => "devise/shared/links"
