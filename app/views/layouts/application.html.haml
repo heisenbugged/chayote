@@ -29,4 +29,11 @@
         - if alert
           .flash.alert= alert
         = yield
+
+    .footer
+      .footer-contents
+        chayote is an open source project! hit us up on
+        = link_to "https://github.com/laspluviosillas/chayote" do
+          %span.github github.
   = render 'shared/javascripts'
+

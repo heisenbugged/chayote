@@ -422,3 +422,26 @@ span.rate {
 .form-inputs input {
     width: 300px;
 }
+.footer-contents {
+    padding-left: 20px;    
+}
+.footer {
+    font-size: 16px;
+    font-family: "museo-sans-1","museo-sans-2";
+    font-weight: 300;
+
+    height: 40px;
+    width: 100%;
+    line-height: 45px;
+    position: absolute;
+    bottom: 0px;
+    background-color: #e5dcca;
+}
+span.github {
+    font-family: Arial;
+    font-weight: bold;
+    color: #8b9f30;
+}
+.footer-contents a:hover {
+    text-decoration: none;
+}
