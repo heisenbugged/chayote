@@ -5,7 +5,7 @@ body {
   font-size: 16px;
   height: auto;
   padding-bottom: 20px;
-  background-image: url("../img/bg.png");
+  background-image: url("../images/bg.png");
 }
 h1, h2, h3, h4, h5, h6 {
 	font-family: "museo-sans-1","museo-sans-2";
@@ -433,7 +433,7 @@ span.rate {
     height: 45px;
     width: 100%;
     line-height: 45px;
-    position: absolute;
+    position: fixed;
     bottom: 0px;
     background-color: #e5dcca;
 }
