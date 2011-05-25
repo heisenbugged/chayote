@@ -18,7 +18,7 @@
           - if current_user.admin?
             %span.link= link_to "Manage Projects", admin_projects_url
             %span.link= link_to "Manage Users", admin_users_url             
-            %span.link= link_to "Generate Invoice", '/invoice/new'
+            %span.link= link_to "Generate Invoice", new_invoice_url
           %span.link= link_to "Sign Out", destroy_user_session_url
         - else
           %span.link= link_to "Sign In", new_user_session_url

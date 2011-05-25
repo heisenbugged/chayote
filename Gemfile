@@ -33,6 +33,23 @@ gem 'devise', '~> 1.1.5'
 gem 'hpricot', '~> 0.8.4'
 gem 'ruby_parser', '~> 2.0.6'
 
+
+# Test gems without generators
+group :test do
+  gem 'rr', '~> 1.0.2'
+  gem 'capybara', '~> 0.4.0'
+  gem 'launchy', '~> 0.3.7'
+  gem 'webrat', '~> 0.7.2', :require => nil
+  gem 'azebiki', '~> 0.0.2', :require => nil
+  gem 'forgery', '~> 0.3.6'
+  gem 'database_cleaner', '~> 0.6.0'
+  gem 'remarkable_activemodel', '~> 4.0.0.alpha4', :require => nil
+  gem 'remarkable_mongoid', '~> 0.5.0', :require => nil
+  gem 'timecop', '~> 0.3.5'
+  gem 'test_notifier', '~> 0.3.6'
+  gem 'autotest', '~> 4.4.5'
+end
+
 # Test gems with generators (available in dev env)
 group :development, :test do
   gem 'rspec-core', '~> 2.3.1'
@@ -40,3 +57,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 2.3.1'
   gem 'spork', '>= 0.9.0.rc2'
 end
+
+# Special gems that get reloaded by spork on each run ( no auto require ) (Microoptimization)
+gem 'fabrication', '~> 0.9.0', :require => nil, :group => :test
+gem 'fabrication', '~> 0.9.0', :group => :development

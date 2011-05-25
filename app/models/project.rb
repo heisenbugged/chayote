@@ -13,5 +13,8 @@ class Project
   #current logged on user tasks
   def user_tasks(user)
     tasks.where(:user_id => user.id)    
-  end    
+  end
+  def tasks_for_dates(start_date, end_date)
+
+  end
 end

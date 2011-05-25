@@ -19,8 +19,8 @@ Chayote::Application.routes.draw do
   end
   resources :time_entries
 
-  match 'invoice/new' => "invoice#new"
-  match 'invoice/show' => "invoice#show"
+  get 'invoice/new' => "invoice#new", :as => :new_invoice
+  post 'invoice/show' => "invoice#show", :as => :invoice
 
   match 'bot' => "bot#index"
 end
