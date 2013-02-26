@@ -9,7 +9,7 @@ gem 'rails', '3.0.4'
 gem 'haml', '~> 3.0.21'
 
 # DB
-gem 'mongoid', :git => "git://github.com/mongoid/mongoid.git"
+gem 'mongoid', :git => "git://github.com/mongoid/mongoid.git", :ref => "b760004d5bc473cba63dacaec5c1be49202f3e4f"
 # Bson and bson_ext have to be the same version
 gem 'bson', '~> 1.3.0'
 gem 'bson_ext', '~> 1.3.0'
