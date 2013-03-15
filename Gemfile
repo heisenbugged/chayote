@@ -33,6 +33,8 @@ gem 'devise', '~> 1.1.5'
 gem 'hpricot', '~> 0.8.4'
 gem 'ruby_parser', '~> 2.0.6'
 
+gem 'pry'
+
 
 # Test gems without generators
 group :test do

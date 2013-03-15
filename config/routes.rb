@@ -21,6 +21,7 @@ Chayote::Application.routes.draw do
 
   get 'invoice/new' => "invoice#new", :as => :new_invoice
   post 'invoice/show' => "invoice#show", :as => :invoice
+  post 'invoice/snapshot' => "invoice#snapshot", :as => :invoice_snapshot
 
   match 'bot' => "bot#index"
 end

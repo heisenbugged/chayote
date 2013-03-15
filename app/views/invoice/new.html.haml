@@ -1,11 +1,11 @@
-.grid_12
+.grid_6
   %h2.page_title_w_margin New Invoice
   = form_tag 'show' do
     Start Date:
-    = text_field_tag :start_date
+    = text_field_tag :start_date, "", id: "invoice_start_date"
     <br/><br/>
     End Date:
-    = text_field_tag :end_date
+    = text_field_tag :end_date, "", id: "invoice_end_date"
     <br/><br/>
     Project:
     <select name="project">
@@ -13,13 +13,34 @@
       <option value="#{project.id}">#{project.name}</option>
     </select>
     <br/>
-    .green-submit= submit_tag "Generate invoice"
+    .green-submit= submit_tag "Generate Invoice"
 
+.grid_6.snapshot
+  %h2.page_title_w_margin Create Snapshot
+  = form_tag 'snapshot' do
+    Start Date:
+    = text_field_tag :start_date, "", id: "snapshot_start_date"
+    <br/><br/>
+    End Date:
+    = text_field_tag :end_date, "", id: "snapshot_end_date"
+    <br/><br/>
+    Project:
+    <select name="project">
+    - @projects.each do |project|
+      <option value="#{project.id}">#{project.name}</option>
+    </select>
+    <br/>
+    .green-submit= submit_tag "Generate Snapshot"    
 
 - content_for :javascripts do  
   :javascript
       $(function() {
-        $("#start_date").datepicker({dateFormat: 'dd-mm-yy'});
-        $("#end_date").datepicker({dateFormat: 'dd-mm-yy'});
+
+        $("#invoice_start_date").datepicker({dateFormat: 'dd-mm-yy'});
+        $("#invoice_end_date").datepicker({dateFormat: 'dd-mm-yy'});
+
+        $("#snapshot_start_date").datepicker({dateFormat: 'dd-mm-yy'});
+        $("#snapshot_end_date").datepicker({dateFormat: 'dd-mm-yy'});
+
       });
 .clear

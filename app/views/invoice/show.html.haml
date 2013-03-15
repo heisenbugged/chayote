@@ -20,7 +20,4 @@
       %tr.total
         %td{:colspan => 4, :style => "background-color:#44C0E9;"}
           = render :partial => 'total', :locals => {:hours => user_mapping.total_hours, :rate => user_mapping.rate}
-  %h1
-    = "Total: " + number_to_currency(@total_cost) + " USD"
-  
-
+  %h1= "Total: " + number_to_currency(@total_cost) + " USD"

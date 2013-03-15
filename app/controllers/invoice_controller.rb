@@ -5,6 +5,7 @@ class InvoiceController < ApplicationController
     authorize! :invoice, current_user
     @projects = Project.all
   end
+
   def show    
     authorize! :invoice, current_user
 
@@ -45,4 +46,14 @@ class InvoiceController < ApplicationController
 
     render :layout => 'barebones'
   end
+
+  def snapshot
+    binding.pry
+  end
+  
+private
+  def time_entries
+    
+  end
+
 end
