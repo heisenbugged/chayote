@@ -13,15 +13,16 @@ Chayote::Application.routes.draw do
   end
   resources :projects do
     resources :tasks
+    resource :snapshots
   end
   resources :tasks do
     resources :time_entries
   end
   resources :time_entries
+  resources :snapshots, :only => [:show]
 
   get 'invoice/new' => "invoice#new", :as => :new_invoice
   post 'invoice/show' => "invoice#show", :as => :invoice
-  post 'invoice/snapshot' => "invoice#snapshot", :as => :invoice_snapshot
 
   match 'bot' => "bot#index"
 end

@@ -8,6 +8,13 @@ GIT
       mongo (~> 1.3)
       tzinfo (~> 0.3.22)
 
+GIT
+  remote: git@github.com:ffi/ffi.git
+  revision: e56be53378c9d153d3ad39a684cbc56dadb90df2
+  branch: ffi-0.6
+  specs:
+    ffi (0.6.4)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -74,8 +81,6 @@ GEM
       abstract (>= 1.0.0)
     eventmachine (0.12.10)
     fabrication (0.9.5)
-    ffi (0.6.3)
-      rake (>= 0.8.7)
     forgery (0.3.8)
       nokogiri (~> 1.4)
     haml (3.0.25)
@@ -201,6 +206,7 @@ DEPENDENCIES
   database_cleaner (~> 0.6.0)
   devise (~> 1.1.5)
   fabrication (~> 0.9.0)
+  ffi!
   forgery (~> 0.3.6)
   haml (~> 3.0.21)
   hpricot (~> 0.8.4)

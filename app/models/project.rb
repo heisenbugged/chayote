@@ -1,8 +1,11 @@
 class Project
   include Mongoid::Document
+  
   field :name
   references_many :members, :dependent => :destroy
   references_many :tasks, :dependent => :destroy
+  references_many :snapshots
+
   def users
     members.collect{ |member| member.user }
   end

@@ -63,3 +63,6 @@ end
 # Special gems that get reloaded by spork on each run ( no auto require ) (Microoptimization)
 gem 'fabrication', '~> 0.9.0', :require => nil, :group => :test
 gem 'fabrication', '~> 0.9.0', :group => :development
+
+
+gem 'ffi', :git => 'git@github.com:ffi/ffi.git', :branch => 'ffi-0.6'

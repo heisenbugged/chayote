@@ -12,6 +12,11 @@ class InvoiceUserMapping
     task_mapping.total = total
     @tasks.push(task_mapping)
   end
+
+  def total_cost
+    total_hours * rate
+  end
+  
   def total_hours
     total = 0  
     tasks.each do |task_mapping|
