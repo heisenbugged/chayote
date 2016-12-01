@@ -16,8 +16,8 @@ test:
 
 # set these environment variables on your prod server
 production:
-  host: flame.mongohq.com
-  port: 27055
-  username: root
-  password: root
-  database: chayote
+  host: ds119768.mlab.com
+  port: 19768
+  username: admin
+  password: admin
+  database: heroku_479c0k66
